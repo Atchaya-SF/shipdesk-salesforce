@@ -126,11 +126,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>EMEA%2C</fullName>
+            <fullName>EMEA</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>NA%2C</fullName>
+            <fullName>NA</fullName>
             <default>false</default>
         </values>
     </picklistValues>

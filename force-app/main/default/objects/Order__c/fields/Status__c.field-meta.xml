@@ -10,29 +10,29 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>New,</fullName>
+                <fullName>New</fullName>
                 <default>false</default>
-                <label>New,</label>
+                <label>New</label>
             </value>
             <value>
-                <fullName>Paid,</fullName>
+                <fullName>Paid</fullName>
                 <default>false</default>
-                <label>Paid,</label>
+                <label>Paid</label>
             </value>
             <value>
-                <fullName>Shipped,</fullName>
+                <fullName>Shipped</fullName>
                 <default>false</default>
-                <label>Shipped,</label>
+                <label>Shipped</label>
             </value>
             <value>
-                <fullName>Delivered,</fullName>
+                <fullName>Delivered</fullName>
                 <default>false</default>
-                <label>Delivered,</label>
+                <label>Delivered</label>
             </value>
             <value>
-                <fullName>Cancelled,</fullName>
+                <fullName>Cancelled</fullName>
                 <default>false</default>
-                <label>Cancelled,</label>
+                <label>Cancelled</label>
             </value>
             <value>
                 <fullName>Returned</fullName>
