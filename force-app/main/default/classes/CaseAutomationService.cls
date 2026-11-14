@@ -1,4 +1,4 @@
-public with sharing class CaseAutomationService {
+public without sharing class CaseAutomationService {
     public static void createDelayCases(List<Shipment__c> shipments) {
         Set<Id> orderIds = new Set<Id>();
         for (Shipment__c s : shipments) { orderIds.add(s.Order__c); }
