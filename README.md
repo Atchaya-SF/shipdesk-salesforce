@@ -1,6 +1,24 @@
-- Designed an end-to-end multi-region customer service process in Service Cloud: custom Order and Shipment objects, case record types, queues, assignment rules and regional SLAs driven by Custom Metadata.
-- Automated case handling with record-triggered, screen and scheduled Flows plus a bulkified Apex trigger, batch job and SOQL/SOSL services, backed by Apex test classes with 90%+ code coverage.
-- Built REST integrations: outbound carrier callout via Named Credentials and an OAuth-secured inbound endpoint for shipment updates, with error logging and a kill switch.
-- Delivered an Agentforce agent with Flow actions and identity checks for order-status and delay/return requests, validated with test scripts in Testing Center.
-- Managed source in Git and deployed with Salesforce CLI to a UAT org, and wrote a SEV-1 runbook.
-- In progress: setting up a CI/CD pipeline (Copado with GitHub) to automate validation and deployment.
+# ShipDesk: E-Commerce Order & Shipment Support Hub
+
+An end-to-end multi-region customer service solution built on **Salesforce Service Cloud**. ShipDesk centralizes support operations across **NA, EMEA, and APAC** by combining declarative automation, bulkified Apex, OAuth-secured REST integrations, and an **Agentforce** service agent.
+
+## Key Capabilities & Architecture
+
+* **Multi-Region Service Cloud Design:** Built custom `Order__c` and `Shipment__c` objects, Case record types, regional queues, assignment rules, and dynamic SLA deadlines driven by `Region_Config__mdt` Custom Metadata (`NA` +8h, `EMEA` +12h, `APAC` +24h).
+* **Declarative & Apex Automation:** Automated case handling with Before-Save, After-Save, Screen, and Scheduled Flows alongside a bulkified `ShipmentTrigger`, nightly `OverdueShipmentBatch`, and SOQL/SOSL search services—backed by Apex unit tests achieving **90%+ code coverage**.
+* **Bi-Directional REST Integrations:** Built an outbound carrier tracking callout via Named Credentials (`CarrierApiService`) and an OAuth 2.0 Client Credentials inbound REST endpoint (`ShipmentWebhook`) for real-time shipment updates, complete with `Integration_Log__c` error logging and a Custom Setting kill switch (`Integration_Settings__c`).
+* **Agentforce Support Agent (`ShipDesk Assistant`):** Configured topics, Flow actions, and customer identity verification (Order Number + Email) to handle order-status inquiries and log delay/return cases 24/7, validated via **Agentforce Testing Center**.
+* **DevOps & Operations:** Managed source control in Git, deployed to a UAT org via Salesforce CLI (`sf`), and documented operational incident response in a SEV-1 runbook (`docs/runbook.md`). *(In progress: CI/CD pipeline with Copado and GitHub for automated validation and deployment.)*
+
+## Quick Deployment
+
+```bash
+git clone https://github.com
+cd shipdesk-salesforce
+sf org login web --alias shipdesk-uat
+sf project deploy start --source-dir force-app --target-org shipdesk-uat --test-level RunLocalTests
+```
+
+## Documentation
+* `docs/requirements.md` — Functional requirements and user stories
+* `docs/runbook.md` — SEV-1 / SEV-2 troubleshooting and kill-switch procedures
