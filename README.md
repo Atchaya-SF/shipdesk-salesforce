@@ -1,1 +1,6 @@
-
+- Designed an end-to-end multi-region customer service process in Service Cloud: custom Order and Shipment objects, case record types, queues, assignment rules and regional SLAs driven by Custom Metadata.
+- Automated case handling with record-triggered, screen and scheduled Flows plus a bulkified Apex trigger, batch job and SOQL/SOSL services, backed by Apex test classes with 90%+ code coverage.
+- Built REST integrations: outbound carrier callout via Named Credentials and an OAuth-secured inbound endpoint for shipment updates, with error logging and a kill switch.
+- Delivered an Agentforce agent with Flow actions and identity checks for order-status and delay/return requests, validated with test scripts in Testing Center.
+- Managed source in Git and deployed with Salesforce CLI to a UAT org, and wrote a SEV-1 runbook.
+- In progress: setting up a CI/CD pipeline (Copado with GitHub) to automate validation and deployment.
